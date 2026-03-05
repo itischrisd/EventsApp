@@ -1,0 +1,172 @@
+{
+  "validation": {
+    "failed": "Validation failed.",
+    "event": {
+      "not-found": "Event does not exist.",
+      "error": "An error occurred while validating the event."
+    },
+    "participation": {
+      "not-found": "Participation does not exist.",
+      "error": "An error occurred while validating the participation.",
+      "exists": "Participation already exists."
+    },
+    "user": {
+      "not-found": "User does not exist.",
+      "error": "An error occurred while validating the user."
+    },
+    "data": {
+      "failed": "Invalid request data.",
+      "error": "An error occurred while validating request data."
+    },
+    "ids": {
+      "failed": "ID in request body does not match ID in request parameters."
+    },
+    "eventId": {
+      "number": {
+        "base": "Event ID must be a number.",
+        "integer": "Event ID must be an integer.",
+        "positive": "Event ID must be a positive number."
+      },
+      "any": {
+        "required": "Event ID is required."
+      }
+    },
+    "name": {
+      "string": {
+        "base": "Event name must be a string.",
+        "empty": "Event name cannot be empty.",
+        "min": "Event name must be at least 3 characters long.",
+        "max": "Event name must be at most 255 characters long."
+      },
+      "any": {
+        "required": "Event name is required."
+      }
+    },
+    "description": {
+      "string": {
+        "base": "Description must be a string.",
+        "max": "Description must be at most 1000 characters long."
+      }
+    },
+    "date": {
+      "date": {
+        "base": "Date must be a valid date.",
+        "greater": "Date must be in the future."
+      },
+      "any": {
+        "required": "Date is required."
+      }
+    },
+    "createdBy": {
+      "number": {
+        "base": "createdBy must be a number.",
+        "integer": "createdBy must be an integer.",
+        "positive": "createdBy must be a positive number."
+      },
+      "any": {
+        "required": "createdBy is required."
+      }
+    },
+    "comment": {
+      "string": {
+        "base": "Comment must be a string.",
+        "max": "Comment must be at most 500 characters long."
+      }
+    },
+    "registrationDate": {
+      "date": {
+        "base": "registrationDate must be a valid date."
+      },
+      "any": {
+        "required": "registrationDate is required."
+      }
+    },
+    "userId": {
+      "number": {
+        "base": "User ID must be a number.",
+        "integer": "User ID must be an integer.",
+        "positive": "User ID must be a positive number."
+      },
+      "any": {
+        "required": "User ID is required."
+      }
+    },
+    "username": {
+      "string": {
+        "base": "Username must be a string.",
+        "empty": "Username cannot be empty.",
+        "min": "Username must be at least 8 characters long.",
+        "max": "Username must be at most 255 characters long."
+      },
+      "any": {
+        "required": "Username is required."
+      }
+    },
+    "email": {
+      "string": {
+        "base": "Email must be a string.",
+        "empty": "Email cannot be empty.",
+        "email": "Email must be a valid email address."
+      },
+      "any": {
+        "required": "Email is required."
+      },
+      "exists": "Email is already in use.",
+      "error": "An error occurred while validating email."
+    },
+    "password": {
+      "string": {
+        "base": "Password must be a string.",
+        "min": "Password must be at least 8 characters long.",
+        "pattern": {
+          "base": "Password must contain at least one uppercase letter, one lowercase letter and one number."
+        }
+      },
+      "any": {
+        "required": "Password is required."
+      }
+    },
+    "login": "Invalid email or password.",
+    "object.unknown": "Unknown field"
+  },
+  "error": {
+    "event": {
+      "fetch-all": "An error occurred while fetching events.",
+      "fetch": "An error occurred while fetching the event.",
+      "participations": "An error occurred while fetching the participations.",
+      "create": "An error occurred while creating the event.",
+      "update": "An error occurred while updating the event.",
+      "delete": "An error occurred while deleting the event."
+    },
+    "participation": {
+      "fetch-all": "An error occurred while fetching participations.",
+      "fetch": "An error occurred while fetching the participation.",
+      "create": "An error occurred while creating the participation.",
+      "update": "An error occurred while updating the participation.",
+      "delete": "An error occurred while deleting the participation."
+    },
+    "user": {
+      "fetch-all": "An error occurred while fetching users.",
+      "fetch": "An error occurred while fetching the user.",
+      "participations": "An error occurred while fetching the participations.",
+      "create": "An error occurred while creating the user.",
+      "update": "An error occurred while updating the user.",
+      "delete": "An error occurred while deleting the user."
+    },
+    "login": "An error occurred during login.",
+    "generic": {
+      "error": "Error ocurred",
+      "message": "Unexpected error has ocurred, we're sorry for the inconvenience."
+    }
+  },
+  "auth": {
+    "unauthorized": {
+      "no-token": "Unauthorized: No token provided.",
+      "invalid": "Unauthorized: Invalid token."
+    },
+    "forbidden": {
+      "admin": "Forbidden: Admin access required.",
+      "resource": "Forbidden: You do not have access to this resource."
+    }
+  }
+}

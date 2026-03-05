@@ -1,0 +1,172 @@
+{
+  "validation": {
+    "failed": "Walidacja nie powiodła się.",
+    "event": {
+      "not-found": "Wydarzenie nie istnieje.",
+      "error": "Wystąpił błąd podczas walidacji wydarzenia."
+    },
+    "participation": {
+      "not-found": "Uczestnictwo nie istnieje.",
+      "error": "Wystąpił błąd podczas walidacji uczestnictwa.",
+      "exists": "Uczestnictwo już istnieje."
+    },
+    "user": {
+      "not-found": "Użytkownik nie istnieje.",
+      "error": "Wystąpił błąd podczas walidacji użytkownika."
+    },
+    "data": {
+      "failed": "Niepoprawne dane żądania.",
+      "error": "Wystąpił błąd podczas walidacji danych żądania."
+    },
+    "ids": {
+      "failed": "ID w ciele żądania nie odpowiada ID w parametrze żądania."
+    },
+    "eventId": {
+      "number": {
+        "base": "ID wydarzenia musi być liczbą.",
+        "integer": "ID wydarzenia musi być liczbą całkowitą.",
+        "positive": "ID wydarzenia musi być liczbą dodatnią."
+      },
+      "any": {
+        "required": "ID wydarzenia jest wymagane."
+      }
+    },
+    "name": {
+      "string": {
+        "base": "Nazwa wydarzenia musi być napisem.",
+        "empty": "Nazwa wydarzenia nie może być pusta.",
+        "min": "Nazwa wydarzenia musi mieć co najmniej 3 znaki długości.",
+        "max": "Nazwa wydarzenia może mieć co najwyżej 255 znaków długości."
+      },
+      "any": {
+        "required": "Nazwa wydarzenia jest wymagana."
+      }
+    },
+    "description": {
+      "string": {
+        "base": "Opis musi być napisem.",
+        "max": "Opis może mieć co najwyżej 1000 znaków długości."
+      }
+    },
+    "date": {
+      "date": {
+        "base": "Data musi być poprawna.",
+        "greater": "Data musi być w przyszłości."
+      },
+      "any": {
+        "required": "Data jest wymagana."
+      }
+    },
+    "createdBy": {
+      "number": {
+        "base": "ID twórcy musi być liczbą.",
+        "integer": "ID twórcy musi być liczbą całkowitą.",
+        "positive": "ID twórcy musi być liczbą dodatnią."
+      },
+      "any": {
+        "required": "ID twórcy jest wymagane."
+      }
+    },
+    "comment": {
+      "string": {
+        "base": "Komentarz musi być napisem.",
+        "max": "Komentarz może mieć co najwyżej 500 znaków długości."
+      }
+    },
+    "registrationDate": {
+      "date": {
+        "base": "Data rejestracji musi być poprawną datą."
+      },
+      "any": {
+        "required": "Data rejestracji jest wymagana."
+      }
+    },
+    "userId": {
+      "number": {
+        "base": "ID użytkownika musi być liczbą.",
+        "integer": "ID użytkownika musi być liczbą całkowitą.",
+        "positive": "ID użytkownika musi być liczbą dodatnią."
+      },
+      "any": {
+        "required": "ID użytkownika jest wymagane."
+      }
+    },
+    "username": {
+      "string": {
+        "base": "Nazwa użytkownika musi być napisem.",
+        "empty": "Nazwa użytkownika nie może być pusta.",
+        "min": "Nazwa użytkownika musi mieć co najmniej 8 znaki długości.",
+        "max": "Nazwa użytkownika musi mieć co najmniej 255 znaki długości."
+      },
+      "any": {
+        "required": "Nazwa użytkownika jest wymagana."
+      }
+    },
+    "email": {
+      "string": {
+        "base": "Email musi być napisem.",
+        "empty": "Email nie może być pusty.",
+        "email": "Email musi być poprawny."
+      },
+      "any": {
+        "required": "Email jest wymagany."
+      },
+      "exists": "Email jest już używany.",
+      "error": "Wystąpił błąd w trakcie walidacji adresu email."
+    },
+    "password": {
+      "string": {
+        "base": "Hasło musi być napisem.",
+        "min": "Hasło musi mieć co najmniej 8 znaki długości.",
+        "pattern": {
+          "base": "Hasło musi zawierać przynajmniej jedną wielką literę, jedną małą literę i jedną cyfrę."
+        }
+      },
+      "any": {
+        "required": "Hasło jest wymagane."
+      }
+    },
+    "login": "Niepoprawny email bądź hasło.",
+    "object.unknown": "Nieropoznane pole"
+  },
+  "error": {
+    "event": {
+      "fetch-all": "Wystąpił błąd w trakcie pobierania wydarzeń.",
+      "fetch": "Wystąpił błąd w trakcie pobierania wydarzenia.",
+      "participations": "Wystąpił błąd w trakcie pobierania uczestnictw.",
+      "create": "Wystąpił błąd w trakcie tworzenia wydarzenia.",
+      "update": "Wystąpił błąd w trakcie aktualizacji wydarzenia.",
+      "delete": "Wystąpił błąd w trakcie usuwania wydarzenia."
+    },
+    "participation": {
+      "fetch-all": "Wystąpił błąd w trakcie pobierania uczestnictw.",
+      "fetch": "Wystąpił błąd w trakcie pobierania uczestnictwa.",
+      "create": "Wystąpił błąd w trakcie tworzenia uczestnictwa.",
+      "update": "Wystąpił błąd w trakcie aktualizacji uczestnictwa.",
+      "delete": "Wystąpił błąd w trakcie usuwania uczestnictwa."
+    },
+    "user": {
+      "fetch-all": "Wystąpił błąd w trakcie pobierania użytkowników.",
+      "fetch": "Wystąpił błąd w trakcie pobierania użytkownika.",
+      "participations": "Wystąpił błąd w trakcie pobierania użytkownika.",
+      "create": "Wystąpił błąd w trakcie tworzenia użytkownika.",
+      "update": "Wystąpił błąd w trakcie aktualizacji użytkownika.",
+      "delete": "Wystąpił błąd w trakcie usuwania użytkownika."
+    },
+    "login": "Wystąpił błąd podczas logowania.",
+    "generic": {
+      "error": "Wystąpił błąd",
+      "message": "Wystąpił nieoczekiwany błąd, przepraszamy za niedogodności."
+    }
+  },
+  "auth": {
+    "unauthorized": {
+      "no-token": "Brak autoryzacji: Nie podano tokenu.",
+      "invalid": "Brak autoryzacji: Nieprawidłowy token."
+    },
+    "forbidden": {
+      "admin": "Zakazane: Wymagane uprawnienia administratora.",
+      "resource": "Zakazane: Nie masz dostępu do tego zasobu."
+    }
+  }
+}
