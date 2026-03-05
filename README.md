@@ -6,7 +6,7 @@
 </h1>
 
 Repozytorium zawiera projekt końcowy z zajęć praktycznych z [TIN](https://github.com/itisarchive/itis-TIN/) (Technologie
-Internetowe) prowadzonych przez Anną Voitenkovą podczas studiów na [PJATK](https://www.pja.edu.pl/).
+Internetowe) prowadzonych przez Annę Voitenkovą podczas studiów na [PJATK](https://www.pja.edu.pl/).
 
 Kod jest rozpowszechniany na licencji [GPLv3](./LICENSE).
 
