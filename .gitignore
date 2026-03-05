@@ -262,7 +262,6 @@ $tf/
 [._]sw[a-p]
 [Aa][Rr][Mm]/
 [Aa][Rr][Mm]64/
-[Bb]in/
 [Bb]uild[Ll]og.*
 [Dd]ebug/
 [Dd]ebugPS/
