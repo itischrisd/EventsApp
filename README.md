@@ -12,96 +12,109 @@ Kod jest rozpowszechniany na licencji [GPLv3](./LICENSE).
 
 ---
 
-## **Instrukcja uruchomienia aplikacji**
+## Opis projektu
 
-Aby uruchomić aplikację, wykonaj poniższe kroki:
+Events App to fullstackowa aplikacja webowa do zarządzania wydarzeniami i uczestnictwami. Projekt miał na celu
+praktyczne zastosowanie współczesnego stacku technologicznego opartego o JavaScript, Node.js i React w architekturze
+klient-serwer z relacyjną bazą danych.
 
----
+Aplikacja umożliwia:
 
-### **1. Skonfiguruj plik `.env`**
-
-W folderze `events-be` w pliku `.env` uzupełnij parametry konfiguracyjne zgodnie ze swoim środowiskiem:
-
-```
-DB_NAME=<nazwa schematu bazy danych, domyślnie events_db>
-DB_USER=<nazwa użytkownika bazy danych>
-DB_PASSWORD=<hasło użytkownika bazy danych>
-DB_HOST=<adres bazy danych>
-DB_DIALECT=<dialekt bazy danych, np. mysql>
-PORT=<port serwera backendowego, domyślnie 3000>
-JWT_SECRET=<tajny klucz JWT>
-FRONTEND_URL=<adres frontendu do konfiguracji CORS, np. http://localhost:5173>
-```
-
-Upewnij się, że wszystkie parametry są poprawnie ustawione.
+- **Zarządzanie użytkownikami** — rejestracja, logowanie, edycja i usuwanie kont z podziałem na role (administrator i
+  zwykły użytkownik).
+- **Zarządzanie wydarzeniami** — tworzenie, przeglądanie, edycja i usuwanie wydarzeń. Każde wydarzenie jest powiązane z
+  użytkownikiem, który je utworzył.
+- **Zarządzanie uczestnictwami** — zapisywanie się na wydarzenia, przeglądanie i edycja zgłoszeń, z możliwością dodania
+  komentarza.
+- **Autoryzacja i uwierzytelnianie** — system logowania oparty na tokenach JWT z kontrolą dostępu do zasobów w
+  zależności od roli i właściciela zasobu.
+- **Internacjonalizacja (i18n)** — obsługa wielu języków (polski i angielski) zarówno po stronie backendu, jak i
+  frontendu.
 
 ---
 
-### **2. Przygotuj bazę danych**
+## Technologie i narzędzia
 
-1. Uruchom serwer MySQL na swoim komputerze. Preferowane jest użycie Dockera.
-2. Wgraj pliki SQL do bazy danych:
-    - Plik `schema.sql` (znajdujący się w folderze `events-be/db`):
-      ```bash
-      mysql -u <nazwa użytkownika dostępowego> -p events_db < db/schema.sql
-      ```
-    - Plik `sample_data.sql` (również w folderze `events-be/db`):
-      ```bash
-      mysql -u <nazwa użytkownika dostępowego> -p events_db < db/sample_data.sql
-      ```
+### Backend (`events-be`)
+
+- **Node.js** — środowisko uruchomieniowe JavaScript po stronie serwera
+- **Express** — minimalistyczny framework webowy do obsługi routingu, middleware i żądań HTTP
+- **Sequelize** — ORM do komunikacji z bazą danych, definiowania modeli i relacji
+- **MySQL2** — sterownik do połączenia z bazą danych MySQL
+- **JSON Web Token (jsonwebtoken)** — generowanie i weryfikacja tokenów JWT do uwierzytelniania
+- **bcrypt** — haszowanie haseł użytkowników
+- **Joi** — walidacja schematów danych przychodzących w żądaniach
+- **i18next + i18next-fs-backend + i18next-http-middleware** — internacjonalizacja komunikatów serwera
+- **cors** — konfiguracja polityki CORS dla komunikacji z frontendem
+- **dotenv** — zarządzanie zmiennymi środowiskowymi z pliku `.env`
+- **morgan** — logowanie żądań HTTP w trybie deweloperskim
+- **ESLint** — statyczna analiza kodu i utrzymanie spójnego stylu
+
+### Frontend (`events-fe`)
+
+- **React 18** — biblioteka do budowy interfejsu użytkownika w oparciu o komponenty
+- **Vite** — szybkie narzędzie do budowania i serwowania aplikacji frontendowej
+- **React Router DOM** — routing po stronie klienta (SPA)
+- **Redux Toolkit + React Redux** — zarządzanie globalnym stanem aplikacji (m.in. sesja użytkownika, powiadomienia)
+- **React Hook Form + @hookform/resolvers** — obsługa formularzy z walidacją
+- **Yup** — deklaratywna walidacja schematów danych w formularzach
+- **Axios** — klient HTTP do komunikacji z API backendu
+- **i18next + react-i18next + i18next-browser-languagedetector** — internacjonalizacja interfejsu użytkownika
+- **date-fns** — formatowanie i operacje na datach
+- **js-cookie** — zarządzanie ciasteczkami (przechowywanie tokenu JWT)
+- **prop-types** — walidacja typów propsów komponentów React
+- **ESLint** — statyczna analiza kodu
 
 ---
 
-### **3. Uruchom backend**
+## Uruchomienie projektu
 
-1. Przejdź do folderu `events-be`:
+### Wymagania wstępne
+
+- **Node.js** (v18+) i **npm**
+- **MySQL** (v8+) — lokalnie lub w kontenerze Docker
+
+### 1. Przygotuj bazę danych
+
+1. Uruchom serwer MySQL.
+2. Wgraj schemat bazy danych:
+   ```bash
+   mysql -u <użytkownik> -p < events-be/db/schema.sql
+   ```
+3. Opcjonalnie wgraj dane przykładowe:
+   ```bash
+   mysql -u <użytkownik> -p < events-be/db/sample_data.sql
+   ```
+
+### 2. Skonfiguruj backend
+
+1. Przejdź do folderu `events-be` i zainstaluj zależności:
    ```bash
    cd events-be
-   ```
-2. Zainstaluj zależności:
-   ```bash
    npm install
    ```
+2. Utwórz plik `.env` na podstawie szablonu z pliku `.env.example` i uzupełnij wymagane zmienne środowiskowe.
+
 3. Uruchom serwer backendowy:
    ```bash
-   node run start
+   npm start
    ```
+   Backend będzie nasłuchiwał pod adresem `http://localhost:3000`.
 
----
+### 3. Uruchom frontend
 
-### **4. Uruchom frontend**
-
-1. Wróć do folderu głównego projektu:
-   ```bash
-   cd ..
-   ```
-2. Przejdź do folderu `events-fe`:
+1. Przejdź do folderu `events-fe` i zainstaluj zależności:
    ```bash
    cd events-fe
-   ```
-3. Zainstaluj zależności:
-   ```bash
    npm install
    ```
-4. Uruchom serwer frontendowy:
+2. Uruchom serwer deweloperski:
    ```bash
-   npm run vite
+   npm run dev
    ```
+   Frontend będzie dostępny pod adresem `http://localhost:5173`.
 
 ---
 
-### **5. Sprawdź działanie aplikacji**
-
-1. Frontend aplikacji powinien być dostępny pod adresem:
-   ```
-   http://localhost:5173
-   ```
-2. Backend nasłuchuje na porcie:
-   ```
-   http://localhost:3000
-   ```
-
----
-
-Jeśli pojawią się problemy, sprawdź logi w terminalu lub upewnij się, że baza danych została poprawnie skonfigurowana i
-jest uruchomiona.
+Jeśli pojawią się problemy, sprawdź logi w terminalu lub upewnij się, że baza danych została poprawnie skonfigurowana
+i jest uruchomiona.
