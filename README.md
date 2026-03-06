@@ -114,8 +114,6 @@ Aplikacja umożliwia:
    ```
    Frontend będzie dostępny pod adresem `http://localhost:5173`.
 
----
-
 W przypadku problemów sprawdź logi w terminalu i upewnij się, że baza danych została poprawnie skonfigurowana i jest
 uruchomiona.
 
