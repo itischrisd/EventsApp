@@ -116,5 +116,10 @@ Aplikacja umożliwia:
 
 ---
 
-Jeśli pojawią się problemy, sprawdź logi w terminalu lub upewnij się, że baza danych została poprawnie skonfigurowana
-i jest uruchomiona.
+W przypadku problemów sprawdź logi w terminalu i upewnij się, że baza danych została poprawnie skonfigurowana i jest
+uruchomiona.
+
+---
+
+Jeśli potrzebujesz pomocy, zauważysz błędy lub masz pomysły na ulepszenia, śmiało skontaktuj się ze mną lub stwórz
+pull request.
